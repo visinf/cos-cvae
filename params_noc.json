@@ -1,0 +1,13 @@
+{"params":{
+	"pathToData" : "../../coco",
+	"vocab_path" : "./data/vocab_coco_full.pkl",
+	"coco_class" : "./data/coco_classname.txt",
+	"nn_dict_path" : "./data/nn_final.pkl",
+	"maxlength" : 20,
+	"latent_dim_tx": 64,
+	"batch_size" : 150,
+	"meanimfeats_size" : 2048,
+	"word_dim" : 300,
+	"mask_hidden_size" : 1024,
+	"max_iterations" : 70000
+}}
