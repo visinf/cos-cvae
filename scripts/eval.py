@@ -135,5 +135,6 @@ if __name__== "__main__":
 					curr_pred_str = ' '.join(curr_pred_str)
 					results_json += [{"image_id":int(im_idx[j]), "caption": curr_pred_str}]
 
-	out = eval_oracle( results_json, 'ours', 'val')
+	annFile = str(data_path)+'/annotations/captions_val2014.json'
+	out = eval_oracle( annFile, results_json, 'ours', 'val')
 	print(out['overall'])

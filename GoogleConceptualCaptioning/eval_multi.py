@@ -19,7 +19,6 @@ from GoogleConceptualCaptioning.misc.div_utils import compute_div_n, compute_glo
 
 import sys
 sys.path.append("coco-caption")
-annFile = '/BS/apr/work/flickr/verse/coco/annotations/captions_val2014.json'
 from GoogleConceptualCaptioning.cococaption.pycocotools.coco import COCO
 from GoogleConceptualCaptioning.cococaption.pycocoevalcap.eval import COCOEvalCap
 from GoogleConceptualCaptioning.cococaption.pycocoevalcap.eval_spice import COCOEvalCapSpice
@@ -57,10 +56,10 @@ def eval_spice_n(preds_n, model_id, split):
         imgToEvalSpice_n[image_id]['caption'] = caption
     return {'overall': out, 'imgToEvalSpice_n': imgToEvalSpice_n}
 
-def eval_oracle(preds_n, model_id, split):
+def eval_oracle(_annFile, preds_n, model_id, split):
     cache_path = os.path.join('./', model_id + '_' + split + '_n.json')
 
-    coco = COCO(annFile)
+    coco = COCO(_annFile)
     valids = coco.getImgIds()
 
     capsById = {}
