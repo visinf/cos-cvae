@@ -72,13 +72,6 @@ if __name__== "__main__":
 	device = torch.device("cuda:0")
 
 	coco_dataset = load_dataset(data_path,vocab_path,coco_class,maxlength)
-	imkeyfile = str(data_path)+'/coco_test.txt'
-	imkeyfile_ = open(imkeyfile,'r').read().split('\n')[:1000]
-	imkeylist = []
-	for images in imkeyfile_:
-		imagekey = os.path.splitext(os.path.basename(images))[0]
-		imagekey  = int(imagekey.split('_')[-1])
-		imkeylist.append(imagekey)
 	coco_dataloader = torch.utils.data.DataLoader(coco_dataset, batch_size=batch_size, shuffle=False, num_workers=4, drop_last=True)
 
 	texDec= TextDecoder(batch_size, 2*latent_dim_tx, vocab_size).cuda()
@@ -137,11 +130,10 @@ if __name__== "__main__":
 
 			count =0
 			for j in range(batch_size):
-				if im_idx[j] in imkeylist:
-					for test_sample_idx in range(beam_width*test_samples):
-						curr_pred_str = loglikehihoods_to_str(all_preds_inf_latent[j,test_sample_idx], maxlength-1)#.split(' ')[:-2]all_preds_inf_latent[j,test_sample_idx]#
-						curr_pred_str = ' '.join(curr_pred_str)
-						results_json += [{"image_id":int(im_idx[j]), "caption": curr_pred_str}]
+				for test_sample_idx in range(beam_width*test_samples):
+					curr_pred_str = loglikehihoods_to_str(all_preds_inf_latent[j,test_sample_idx], maxlength-1)#.split(' ')[:-2]all_preds_inf_latent[j,test_sample_idx]#
+					curr_pred_str = ' '.join(curr_pred_str)
+					results_json += [{"image_id":int(im_idx[j]), "caption": curr_pred_str}]
 
 	out = eval_oracle( results_json, 'ours', 'val')
 	print(out['overall'])
