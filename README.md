@@ -98,6 +98,9 @@ coco
  - coco_train_extra_2014_noc_adaptive_withclasses.h5
  - coco_test_2014_noc_adaptive_withclasses.h5
 data
+ - coco_classname.txt
+ - visual_genome_classes.txt
+ - vocab_coco_full.pkl
  - nn_final.pkl
  - nn_noc.pkl
  ```
@@ -125,8 +128,10 @@ We provide pre-trained models for both captioning on COCO 2014 (mRNN split) and 
 
 1. Download the pre-trained models from [here](https://drive.google.com/drive/folders/1rASJIDyD3XaF7_PGifWf3612Br-L7ezw?usp=sharing) to the  ```ckpts ``` folder.
 
-2. For evaluation of oracle scores and diversity, we follow [Luo et al.](https://github.com/ruotianluo/GoogleConceptualCaptioning). In the folder  ```GoogleConceptualCaptioning ``` download the [cider](https://github.com/ruotianluo/cider) and [coco-caption](https://github.com/ruotianluo/coco-caption) folders. Then run,
+2. For evaluation of oracle scores and diversity, we follow [Luo et al.](https://github.com/ruotianluo/GoogleConceptualCaptioning). In the folder  ```GoogleConceptualCaptioning ``` download the [cider](https://github.com/ruotianluo/cider) and in the [cococaption](https://github.com/ruotianluo/coco-caption) folder run the download scripts,
  ```
+		./GoogleConceptualCaptioning/cococaption/get_google_word2vec_model.sh
+		./GoogleConceptualCaptioning/cococaption/get_stanford_models.sh
 		python ./scripts/eval.py
  ```
 

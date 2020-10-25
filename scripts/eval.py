@@ -80,6 +80,7 @@ if __name__== "__main__":
 	test_samples = 100
 	beam_width = 2
 
+	annFile = str(data_path)+'/annotations/captions_val2014.json'
 
 	try:
 		model = torch.load('./ckpts/model_checkpoint_release.pt')
@@ -135,6 +136,5 @@ if __name__== "__main__":
 					curr_pred_str = ' '.join(curr_pred_str)
 					results_json += [{"image_id":int(im_idx[j]), "caption": curr_pred_str}]
 
-	annFile = str(data_path)+'/annotations/captions_val2014.json'
 	out = eval_oracle( annFile, results_json, 'ours', 'val')
 	print(out['overall'])
