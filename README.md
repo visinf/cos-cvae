@@ -168,3 +168,13 @@ For consensus re-ranking follow the steps [here](https://github.com/mjhucla/mRNN
 |          | bottle |  bus   |  couch | microwave | pizza  | racket | suitcase | zebra | average |
 | -------- | ------ | ------ | ------ | --------- | ------ | ------ |  ------  | ------| ------  |
 | COS-CVAE |  35.4  |  83.6  |  53.8  |   63.2    |  86.7  |  69.5  |   46.1   |  81.7 |   65.0  |
+
+
+## Bibtex
+
+	@inproceedings{coscvae20neurips,
+	  title     = {Diverse Image Captioning with Context-Object Split Latent Spaces},
+	  author    = {Mahajan, Shweta and Roth, Stefan},
+	  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+	  year = {2020}
+	}
