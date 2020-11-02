@@ -4,7 +4,12 @@
   <img width="450" height="300" src="./assets/teaser.png" hspace="30">
 </p>
 
-This repository is the official implementation of **Diverse Image Captioning with Context-Object Split Latent Spaces**.
+This repository is the PyTorch implementation of the paper:
+
+**Diverse Image Captioning with Context-Object Split Latent Spaces (NeurIPS 2020)**
+
+[Shweta Mahajan<sup>\*</sup>](https://www.visinf.tu-darmstadt.de/team_members/smahajan/smahajan.en.jsp), [Stefan Roth](https://www.visinf.tu-darmstadt.de/team_members/sroth/sroth.en.jsp)
+
 We additionally include evaluation code from [Luo et al.](https://github.com/ruotianluo/GoogleConceptualCaptioning) in the folder ```GoogleConceptualCaptioning ```, which has been patched for compatibility.
 
 
