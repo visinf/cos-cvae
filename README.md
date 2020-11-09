@@ -6,7 +6,7 @@
 
 This repository is the PyTorch implementation of the paper:
 
-**Diverse Image Captioning with Context-Object Split Latent Spaces (NeurIPS 2020)**
+[**Diverse Image Captioning with Context-Object Split Latent Spaces (NeurIPS 2020)**](https://arxiv.org/abs/2011.00966)
 
 [Shweta Mahajan](https://www.visinf.tu-darmstadt.de/visinf/team_members/smahajan/smahajan.en.jsp) and [Stefan Roth](https://www.visinf.tu-darmstadt.de/visinf/team_members/sroth/sroth.en.jsp)
 
