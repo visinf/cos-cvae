@@ -44,7 +44,7 @@ We use the Faster R-CNN features for images similar to [Anderson et al.](https:/
 
 ### Download instructions
 
-Preprocessed training data is available [here](https://drive.google.com/drive/folders/11CK4hxf2UIJQ-QawPrgZC_veE9u6z3cr?usp=sharing) as hdf5 files. The provided hdf5 files contain the following fields:
+Preprocessed training data is available [here](http://download.visinf.informatik.tu-darmstadt.de/data/2020-neurips-mahajan-cos-cvae/coco.zip) as hdf5 files. The provided hdf5 files contain the following fields:
 - image_id: ID of the COCO image
 - num_boxes: The proposal regions detected from Faster R-CNN
 - features: ResNet-101 features of the extracted regions
@@ -53,7 +53,7 @@ Preprocessed training data is available [here](https://drive.google.com/drive/fo
 
 Note that the ["image_id","num_boxes","features"] fields are identical to Anderson et al.
 
-Create a folder named ```coco ``` and download the preprocessed training and test datasets from the coco folder in the drive link above as follows (it is also possible to directly download the entire coco folder from the drive link):
+Create a folder named ```coco ``` and download the preprocessed training and test datasets from the coco folder in the link above as follows (it is also possible to directly download the entire coco folder from the link):
 
 1. Download the following files for training on COCO 2014 (m-RNN split):
 ```
@@ -80,7 +80,7 @@ coco/annotations/captions_train2014.json
 coco/annotations/captions_val2014.json
 ```
 
-5. Download the following files from the drive link in a seperate folder *data* (outside coco). These files contain the contextual neighbours for pseudo supervision:
+5. Download the following files from [here](http://download.visinf.informatik.tu-darmstadt.de/data/2020-neurips-mahajan-cos-cvae/data.zip) in a seperate folder *data* (outside coco). These files contain the contextual neighbours for pseudo supervision:
 ```
 data/nn_final.pkl
 data/nn_noc.pkl
@@ -131,7 +131,7 @@ The models were trained on a single nvidia V100 GPU with 32 GB memory. 16 GB is 
 ## Pre-trained models and evaluation
 We provide pre-trained models for both captioning on COCO 2014 (mRNN split) and novel object captioning. Please follow the following steps:
 
-1. Download the pre-trained models from [here](https://drive.google.com/drive/folders/1rASJIDyD3XaF7_PGifWf3612Br-L7ezw?usp=sharing) to the  ```ckpts ``` folder.
+1. Download the pre-trained models from [here](https://download.visinf.informatik.tu-darmstadt.de/data/2020-neurips-mahajan-cos-cvae/ckpts.zip) to the  ```ckpts ``` folder.
 
 2. For evaluation of oracle scores and diversity, we follow [Luo et al.](https://github.com/ruotianluo/GoogleConceptualCaptioning). In the folder  ```GoogleConceptualCaptioning ``` download the [cider](https://github.com/ruotianluo/cider) and in the [cococaption](https://github.com/ruotianluo/coco-caption) folder run the download scripts,
  ```
